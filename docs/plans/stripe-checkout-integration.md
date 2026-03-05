@@ -172,11 +172,6 @@ Add to `.env.local`:
 
 ```env
 # Stripe Configuration
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_GvF3BSyx8RSXMK5yAFhqEd3H
-STRIPE_SECRET_KEY=sk_test_Ou1w6LVt3zmVipDVJsvMeQsc
-
-# Stripe Price ID (from Dashboard)
-STRIPE_PRICE_ID=price_xxxxx
 ```
 
 ---
