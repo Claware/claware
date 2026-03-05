@@ -80,10 +80,12 @@ export default function Home() {
 
           {/* Title */}
           <h1 className="text-2xl md:text-3xl font-bold text-center text-zinc-900 mb-2">
-            Deploy Your OpenClaw in Minutes
+            Deploy Your OpenClaw in Hours
           </h1>
           <p className="text-center text-zinc-500 mb-12">
-            Select your AI model and messaging channel to get started
+            Yes, it does take a few hours to deploy your OpenClaw. 
+            <br />
+            I'll set up everything from purchasing the VPS to configuring and deploying your instance.
           </p>
 
           {/* Model Selection - Horizontal Pills */}
