@@ -1,11 +1,11 @@
 'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { Zap, Check, X, ExternalLink } from "lucide-react";
 
-export default function SubscribePage() {
+function SubscribeContent() {
   const searchParams = useSearchParams();
   const isSuccess = searchParams.get("success") === "true";
   const isCanceled = searchParams.get("canceled") === "true";
@@ -314,5 +314,19 @@ export default function SubscribePage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function SubscribePage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-[#FAFAFA] flex flex-col items-center justify-center p-4">
+        <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-[#E53935]/10 text-[#E53935]">
+          <Zap className="w-8 h-8 animate-pulse" />
+        </div>
+      </div>
+    }>
+      <SubscribeContent />
+    </Suspense>
   );
 }
