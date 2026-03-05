@@ -85,7 +85,7 @@ export default function Home() {
           <p className="text-center text-zinc-500 mb-12">
             Yes, it does take a few hours to deploy your OpenClaw. 
             <br />
-            I'll set up everything from purchasing the VPS to configuring and deploying your instance.
+            We'll set up everything from purchasing the VPS to configuring and deploying your instance.
           </p>
 
           {/* Model Selection - Horizontal Pills */}
