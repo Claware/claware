@@ -13,8 +13,32 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Claware - Deploy Your AI Assistant in Minutes",
-  description: "Pick a model, choose a channel, and deploy with Claware. No server setup, no code, no configuration. We handle the install, hardening, and ongoing care.",
+  title: "Claware - Deploy Your AI Assistant in Hours",
+  description: "Yes, it does take a few hours to deploy your OpenClaw. I'll set up everything from purchasing the VPS to configuring and deploying your instance.",
+  keywords: ["openClaw", "setup", "openclaw", "simpleClaw", "deploy openclaw", "openclaw ai", "claware"],
+  openGraph: {
+    title: "Claware - Deploy Your AI Assistant in Hours",
+    description: "Yes, it does take a few hours to deploy your OpenClaw. I'll set up everything from purchasing the VPS to configuring and deploying your instance.",
+    url: "https://claware.ai",
+    siteName: "Claware",
+    images: [
+      {
+        url: "https://claware.ai/claware.ai-og.png",
+        width: 1200,
+        height: 630,
+        alt: "Claware - Deploy Your OpenClaw",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Claware - Deploy Your AI Assistant in Hours",
+    description: "Yes, it does take a few hours to deploy your OpenClaw. I'll set up everything from purchasing the VPS to configuring and deploying your instance.",
+    images: ["https://claware.ai/claware.ai-og.png"],
+    creator: "@claware",
+  },
 };
 
 export default function RootLayout({
