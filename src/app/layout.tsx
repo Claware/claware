@@ -14,12 +14,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Claware - Deploy Your AI Assistant in Hours",
-  description: "Yes, it does take a few hours to deploy your OpenClaw. I'll set up everything from purchasing the VPS to configuring and deploying your instance.",
+  title: "Claware - Deploy Your AI Assistant in Minutes",
+  description: "Skip the technical headaches. Deploy your own 24/7 OpenClaw in under 1 minute — no coding, no configuration, just one click.",
   keywords: ["openClaw", "setup", "openclaw", "simpleClaw", "deploy openclaw", "openclaw ai", "claware", "openclaw telegram"],
   openGraph: {
-    title: "Claware - Deploy Your AI Assistant in Hours",
-    description: "Yes, it does take a few hours to deploy your OpenClaw. I'll set up everything from purchasing the VPS to configuring and deploying your instance.",
+    title: "Claware - Deploy Your AI Assistant in Minutes",
+    description: "Skip the technical headaches. Deploy your own 24/7 OpenClaw in under 1 minute — no coding, no configuration, just one click.",
     url: "https://claware.ai",
     siteName: "Claware",
     images: [
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Claware - Deploy Your AI Assistant in Hours",
-    description: "Yes, it does take a few hours to deploy your OpenClaw. I'll set up everything from purchasing the VPS to configuring and deploying your instance.",
+    title: "Claware - Deploy Your AI Assistant in minutes",
+    description: "Skip the technical headaches. Deploy your own 24/7 OpenClaw in under 1 minute — no coding, no configuration, just one click.",
     images: ["https://claware.ai/claware.ai-og.png"],
     creator: "@claware",
   },
@@ -52,7 +52,7 @@ const structuredData = {
       "url": "https://claware.ai",
       "logo": "https://claware.ai/claware.ai-og.png",
       "foundingDate": "2024",
-      "description": "Claware helps you deploy your own OpenClaw AI assistant in hours. We handle everything from VPS setup to configuration and deployment.",
+      "description": "Skip the technical headaches. Deploy your own 24/7 OpenClaw in under 1 minute — no coding, no configuration, just one click.",
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer support",

@@ -80,12 +80,12 @@ export default function Home() {
 
           {/* Title */}
           <h1 className="text-2xl md:text-3xl font-bold text-center text-zinc-900 mb-2">
-            Deploy Your OpenClaw in Hours
+            Deploy Your OpenClaw in Minutes
           </h1>
           <p className="text-center text-zinc-500 mb-12">
-            Yes, it does take a few hours to deploy your OpenClaw. 
+            Skip the technical headaches.
             <br />
-            We'll set up everything from purchasing the VPS to configuring and deploying your instance.
+            Deploy your own 24/7 OpenClaw in minutes — no coding, no configuration, just one click.
           </p>
 
           {/* Model Selection - Horizontal Pills */}
@@ -175,7 +175,7 @@ export default function Home() {
           </button>
 
           <p className="text-center text-sm text-zinc-500 mt-4">
-            Secure sign-in with Google. Deploy in hours.
+            Secure sign-in with Google. Deploy in minutes.
           </p>
         </div>
       </main>
