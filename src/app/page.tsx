@@ -184,7 +184,7 @@ export default function Home() {
       <footer className="px-4 py-6 border-t border-zinc-200">
         <div className="max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-center gap-2">
           <p className="text-sm text-zinc-500">
-            © 2026 Claware.ai - All rights reserved.
+            © 2026 Claware - All rights reserved.
           </p>
         </div>
       </footer>
