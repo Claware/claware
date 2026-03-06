@@ -175,7 +175,7 @@ export default function Home() {
           </button>
 
           <p className="text-center text-sm text-zinc-500 mt-4">
-            Secure sign-in with Google. Deploy in minutes.
+            Secure sign-in with Google. Deploy in hours.
           </p>
         </div>
       </main>
