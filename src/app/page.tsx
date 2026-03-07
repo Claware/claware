@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { Zap, MessageCircle, Smartphone, Mail, Check, MessageSquare, Sparkles } from 'lucide-react';
+import { Zap, Mail, Check, Sparkles } from 'lucide-react';
+import Image from 'next/image';
 import { Claude, OpenAI, Gemini } from '@lobehub/icons';
 import { createClient } from '@/lib/supabase/client';
 
@@ -12,12 +13,12 @@ const models = [
   { id: 'gemini', name: 'Gemini 2.5 Pro', Icon: Gemini, color: 'from-blue-500/20 to-indigo-500/20' },
 ];
 
-// Channel options
+// Channel options with custom SVG logos
 const channels = [
-  { id: 'telegram', name: 'Telegram', icon: MessageCircle, available: true },
-  { id: 'discord', name: 'Discord', icon: MessageSquare, available: false },
-  { id: 'whatsapp', name: 'WhatsApp', icon: Smartphone, available: false },
-  { id: 'email', name: 'Email', icon: Mail, available: false },
+  { id: 'telegram', name: 'Telegram', icon: '/telegram-logo.svg', available: true },
+  { id: 'discord', name: 'Discord', icon: '/discord-logo.svg', available: false },
+  { id: 'whatsapp', name: 'WhatsApp', icon: '/whatsapp.svg', available: false },
+  { id: 'email', name: 'Email', icon: 'lucide:mail', available: false },
 ];
 
 export default function Home() {
@@ -105,7 +106,7 @@ export default function Home() {
           <div className="mb-5">
             <label className="flex items-center gap-1.5 text-xs font-semibold text-stone-500 uppercase tracking-wide mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-rose-500" />
-              AI Model
+              Default AI Model
             </label>
             <div className="grid grid-cols-3 gap-2">
               {models.map((model) => (
@@ -157,7 +158,9 @@ export default function Home() {
           {/* Channel Selection - Compact Cards */}
           <div className="mb-6">
             <label className="flex items-center gap-1.5 text-xs font-semibold text-stone-500 uppercase tracking-wide mb-3">
-              <MessageCircle className="w-3.5 h-3.5" />
+              <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
               Messaging Channel
             </label>
             <div className="grid grid-cols-4 gap-2">
@@ -201,19 +204,27 @@ export default function Home() {
                   {/* Icon */}
                   <div className={`
                     w-7 h-7 rounded-lg flex items-center justify-center transition-all duration-300
-                    ${selectedChannel === channel.id && channel.available
-                      ? 'bg-gradient-to-br from-rose-500/20 to-orange-500/20'
-                      : 'bg-stone-100 group-hover:bg-stone-200'
+                    bg-stone-100 group-hover:bg-stone-200
                     }
                     ${isHovered === channel.id ? 'scale-110' : ''}
                   `}>
-                    <channel.icon className={`
-                      w-3.5 h-3.5 transition-colors duration-200
-                      ${selectedChannel === channel.id && channel.available
-                        ? 'text-rose-600'
-                        : 'text-stone-500 group-hover:text-stone-600'
-                      }
-                    `} />
+                    {channel.icon.startsWith('/') ? (
+                      <Image
+                        src={channel.icon}
+                        alt={channel.name}
+                        width={16}
+                        height={16}
+                        className={`
+                          w-4 h-4 object-contain transition-all duration-200
+                          ${selectedChannel === channel.id && channel.available ? 'scale-105' : ''}
+                        `}
+                      />
+                    ) : (
+                      <Mail className={`
+                        w-3.5 h-3.5 transition-colors duration-200
+                        text-stone-500 group-hover:text-stone-600
+                      `} />
+                    )}
                   </div>
 
                   <div className="text-center">
