@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Claware - Deploy Your AI Assistant in Minutes",
+  title: "Claware - Deploy Your OpenClaw in Minutes",
   description: "Skip the technical headaches. Deploy your own 24/7 OpenClaw in under 1 minute — no coding, no configuration, just one click.",
-  keywords: ["openClaw", "setup", "openclaw", "simpleClaw", "deploy openclaw", "openclaw ai", "claware", "openclaw telegram"],
+  keywords: ["openClaw", "setup", "openclaw", "simpleClaw", "deploy openclaw", "openclaw ai", "claware", "openclaw telegram", "setupClaw"],
   openGraph: {
     title: "Claware - Deploy Your AI Assistant in Minutes",
     description: "Skip the technical headaches. Deploy your own 24/7 OpenClaw in under 1 minute — no coding, no configuration, just one click.",
