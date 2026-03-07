@@ -370,8 +370,8 @@ export default function Home() {
             © 2026 Claware
           </p>
           <div className="flex items-center gap-4">
-            <a href="/#privacy" className="text-xs text-stone-500 hover:text-rose-600 transition-colors duration-200">Privacy</a>
-            <a href="/#terms" className="text-xs text-stone-500 hover:text-rose-600 transition-colors duration-200">Terms</a>
+            <a href="/privacy" className="text-xs text-stone-500 hover:text-rose-600 transition-colors duration-200">Privacy</a>
+            <a href="/terms" className="text-xs text-stone-500 hover:text-rose-600 transition-colors duration-200">Terms</a>
           </div>
         </div>
       </footer>
