@@ -1,14 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import { Zap, Bot, MessageCircle, Smartphone, Mail, Check, Sparkles, Brain, MessageSquare, Layers } from 'lucide-react';
+import { Zap, MessageCircle, Smartphone, Mail, Check, MessageSquare, Sparkles } from 'lucide-react';
+import { Claude, OpenAI, Gemini } from '@lobehub/icons';
 import { createClient } from '@/lib/supabase/client';
 
-// Model options with distinctive icons
+// Model options with brand SVG icons from @lobehub/icons
 const models = [
-  { id: 'opus', name: 'Claude Opus 4.5', icon: Brain, color: 'from-amber-500/20 to-orange-500/20', iconColor: 'text-amber-600' },
-  { id: 'gpt4', name: 'GPT-4o', icon: Sparkles, color: 'from-emerald-500/20 to-teal-500/20', iconColor: 'text-emerald-600' },
-  { id: 'gemini', name: 'Gemini 2.5 Pro', icon: Layers, color: 'from-blue-500/20 to-indigo-500/20', iconColor: 'text-blue-600' },
+  { id: 'opus', name: 'Claude Opus 4.5', Icon: Claude, color: 'from-amber-500/20 to-orange-500/20' },
+  { id: 'gpt4', name: 'GPT-4o', Icon: OpenAI, color: 'from-emerald-500/20 to-teal-500/20' },
+  { id: 'gemini', name: 'Gemini 2.5 Pro', Icon: Gemini, color: 'from-blue-500/20 to-indigo-500/20' },
 ];
 
 // Channel options
@@ -103,7 +104,7 @@ export default function Home() {
           {/* Model Selection - Compact Cards */}
           <div className="mb-5">
             <label className="flex items-center gap-1.5 text-xs font-semibold text-stone-500 uppercase tracking-wide mb-3">
-              <Brain className="w-3.5 h-3.5" />
+              <span className="w-1.5 h-1.5 rounded-full bg-rose-500" />
               AI Model
             </label>
             <div className="grid grid-cols-3 gap-2">
@@ -138,13 +139,13 @@ export default function Home() {
                     )}
                   </div>
 
-                  {/* Icon with gradient background */}
+                  {/* Brand Icon with gradient background */}
                   <div className={`
                     w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-300
                     bg-gradient-to-br ${model.color}
                     ${isHovered === model.id ? 'scale-110' : ''}
                   `}>
-                    <model.icon className={`w-4.5 h-4.5 ${model.iconColor}`} />
+                    <model.Icon size={20} />
                   </div>
 
                   <span className="font-medium text-stone-900 text-xs">{model.name}</span>
@@ -235,7 +236,7 @@ export default function Home() {
               onMouseDown={() => setIsPressed('cta')}
               onMouseUp={() => setIsPressed(null)}
               className={`
-                group w-full flex items-center justify-center gap-2.5 py-3.5 px-6
+                group cursor-pointer w-full flex items-center justify-center gap-2.5 py-3.5 px-6
                 bg-gradient-to-r from-stone-900 via-stone-800 to-stone-900
                 text-white rounded-xl font-semibold text-base
                 shadow-lg shadow-stone-900/20
