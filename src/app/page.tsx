@@ -239,7 +239,7 @@ export default function Home() {
           </div>
 
           {/* CTA Section */}
-          <div className="space-y-3">
+          <div className="space-y-3 mb-12">
             <button
               onClick={handleSignInWithGoogle}
               onMouseEnter={() => setIsHovered('cta')}
@@ -274,6 +274,91 @@ export default function Home() {
               <span className="w-1 h-1 rounded-full bg-stone-300" />
               <span className="text-stone-400">Google sign-in</span>
             </p>
+          </div>
+
+          {/* Comparison Section */}
+          <div className="w-full mb-8 mt-10">
+            {/* Section Header */}
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-stone-200 to-stone-200" />
+              <span className="text-xs font-medium text-stone-500 uppercase tracking-wider">Comparison</span>
+              <div className="h-px flex-1 bg-gradient-to-l from-transparent via-stone-200 to-stone-200" />
+            </div>
+
+            <h2 className="text-2xl md:text-3xl font-semibold text-stone-900 text-center mb-8 tracking-tight">
+              Traditional vs <span className="text-rose-600">Claware</span>
+            </h2>
+
+            {/* Comparison Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* Left: Traditional */}
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-stone-200/60 p-5">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-8 h-8 rounded-lg bg-stone-100 flex items-center justify-center">
+                    <svg className="w-4 h-4 text-stone-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <span className="text-sm font-semibold text-stone-600 italic">Traditional</span>
+                </div>
+
+                <ul className="space-y-2.5">
+                  {[
+                    'Purchasing VPS machine',
+                    'Setting SSH, firewall, etc',
+                    'Connecting to server with SSH',
+                    'Install Node.js, NPM, OpenClaw',
+                    'Setting up OpenClaw config',
+                    'Buy AI model API key',
+                    'Connecting Telegram Channel',
+                    'Adding Agent Skill settings',
+                    'Worry about security issues',
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-sm text-stone-600">
+                      <span className="w-1.5 h-1.5 rounded-full bg-stone-300 flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-5 pt-4 border-t border-stone-100">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-stone-500 italic">~2-3 hours setup</span>
+                    <span className="text-xs font-medium text-stone-400">Complex</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right: Claware */}
+              <div className="bg-white rounded-2xl border-2 border-rose-100 p-5 relative overflow-hidden flex flex-col">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-rose-100/40 via-orange-50/20 to-transparent rounded-full blur-2xl" />
+
+                <div className="relative flex flex-col flex-1">
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-rose-500 to-orange-500 flex items-center justify-center">
+                      <Zap className="w-4 h-4 text-white" />
+                    </div>
+                    <span className="text-sm font-semibold text-rose-600 italic">Claware</span>
+                  </div>
+
+                  <div className="flex flex-col items-center justify-center py-8 md:py-12 text-center flex-1">
+                    <div className="text-4xl md:text-5xl font-bold text-stone-900 mb-4 tracking-tight">
+                      60 <span className="text-rose-500">secs</span>
+                    </div>
+                    <p className="text-sm text-stone-600 leading-relaxed max-w-[16ch]">
+                      One click. We handle all for you.
+                    </p>
+                  </div>
+
+                  <div className="mt-auto pt-4 border-t border-rose-100">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-stone-500 italic">Under 1 minute</span>
+                      <span className="text-xs font-medium text-rose-500">Secure, Simple, Fast</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </main>
