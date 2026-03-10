@@ -9,8 +9,8 @@ import { createClient } from '@/lib/supabase/client';
 // Model options with brand SVG icons from @lobehub/icons
 const models = [
   { id: 'opus', name: 'Claude Opus 4.5', Icon: Claude, color: 'from-amber-500/20 to-orange-500/20' },
-  { id: 'gpt4', name: 'GPT-4o', Icon: OpenAI, color: 'from-emerald-500/20 to-teal-500/20' },
-  { id: 'gemini', name: 'Gemini 2.5 Pro', Icon: Gemini, color: 'from-blue-500/20 to-indigo-500/20' },
+  { id: 'gpt5.4', name: 'GPT-5.4', Icon: OpenAI, color: 'from-emerald-500/20 to-teal-500/20' },
+  { id: 'gemini3', name: 'Gemini 3', Icon: Gemini, color: 'from-blue-500/20 to-indigo-500/20' },
 ];
 
 // Channel options with custom SVG logos
@@ -265,14 +265,18 @@ export default function Home() {
               Deploy My OpenClaw
             </button>
 
-            <p className="text-center text-xs text-stone-500 flex items-center justify-center gap-2">
-              <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 6V12L16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-               setup in minutes
-              <span className="w-1 h-1 rounded-full bg-stone-300" />
+            <p className="text-center text-[11px] sm:text-xs text-stone-500 flex flex-wrap items-center justify-center gap-x-1.5 sm:gap-x-2 gap-y-0.5">
+              <span className="flex items-center gap-1">
+                <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M12 6V12L16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                setup in minutes
+              </span>
+              <span className="hidden sm:block w-1 h-1 rounded-full bg-stone-300" />
               <span className="text-stone-400">Google sign-in</span>
+              <span className="w-1 h-1 rounded-full bg-stone-300" />
+              <span className="text-stone-400"><span className="text-stone-700 font-medium">$19</span> credits for all models</span>
             </p>
           </div>
 
