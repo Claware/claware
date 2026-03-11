@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     siteName: "Claware",
     images: [
       {
-        url: "https://claware.ai/claware.ai-og.png",
+        url: "https://claware.ai/claware.ai-og.webp",
         width: 1200,
         height: 630,
         alt: "Claware - Deploy Your OpenClaw",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Claware - Deploy Your AI Assistant in minutes",
     description: "Skip the technical headaches. Deploy your own 24/7 OpenClaw in under 1 minute — no coding, no configuration, just one click.",
-    images: ["https://claware.ai/claware.ai-og.png"],
+    images: ["https://claware.ai/claware.ai-og.webp"],
     creator: "@claware",
   },
 };
