@@ -73,13 +73,21 @@ export default function Home() {
             <span className="text-base font-semibold text-stone-800 group-hover:text-rose-600 transition-colors duration-300">Claware</span>
           </a>
 
-          <a
-            href="mailto:support@claware.ai"
-            className="flex items-center gap-1.5 text-sm text-stone-600 hover:text-rose-600 transition-colors duration-300"
-          >
-            <Mail className="w-4 h-4" />
-            <span className="hidden sm:inline">Support</span>
-          </a>
+          <nav className="flex items-center gap-6">
+            <a
+              href="/blog"
+              className="hidden text-sm text-stone-600 hover:text-rose-600 transition-colors duration-200"
+            >
+              Blog
+            </a>
+            <a
+              href="mailto:support@claware.ai"
+              className="flex items-center gap-1.5 text-sm text-stone-600 hover:text-rose-600 transition-colors duration-300"
+            >
+              <Mail className="w-4 h-4" />
+              <span className="hidden sm:inline">Support</span>
+            </a>
+          </nav>
         </div>
       </header>
 
@@ -118,7 +126,7 @@ export default function Home() {
                   onMouseDown={() => setIsPressed(model.id)}
                   onMouseUp={() => setIsPressed(null)}
                   className={`
-                    relative group flex flex-col items-center gap-2 p-3 rounded-xl border-2 transition-all duration-200
+                    relative group cursor-pointer flex flex-col items-center gap-2 p-3 rounded-xl border-2 transition-all duration-200
                     focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#F8F7F5]
                     ${selectedModel === model.id
                       ? 'border-rose-500/60 bg-white shadow-md shadow-rose-500/10'
@@ -174,7 +182,7 @@ export default function Home() {
                   onMouseDown={() => channel.available && setIsPressed(channel.id)}
                   onMouseUp={() => setIsPressed(null)}
                   className={`
-                    relative group flex flex-col items-center gap-1.5 p-2.5 rounded-xl border-2 transition-all duration-200
+                    relative cursor-pointer group flex flex-col items-center gap-1.5 p-2.5 rounded-xl border-2 transition-all duration-200
                     focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#F8F7F5]
                     ${!channel.available ? 'opacity-40 cursor-not-allowed border-stone-200/40 bg-stone-100/50' : ''}
                     ${channel.available && selectedChannel === channel.id

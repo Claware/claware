@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" fill="none">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="600" y2="340">
+      <stop offset="0%" stop-color="#701A75"/>
+      <stop offset="50%" stop-color="#86198F"/>
+      <stop offset="100%" stop-color="#A21CAF"/>
+    </linearGradient>
+    <linearGradient id="bubble" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F0ABFC" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#E879F9" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="340" fill="url(#bg4)"/>
+
+  <!-- Chat bubbles -->
+  <g opacity="0.8">
+    <!-- Large bubble left -->
+    <rect x="80" y="60" width="200" height="100" rx="20" fill="url(#bubble)" stroke="#F0ABFC" stroke-width="2"/>
+    <text x="110" y="110" fill="#FCE7F3" font-size="14" font-family="system-ui">How can I help you today?</text>
+
+    <!-- Small bubble right -->
+    <rect x="320" y="100" width="180" height="70" rx="15" fill="#F0ABFC" opacity="0.3"/>
+    <text x="345" y="140" fill="#FCE7F3" font-size="14" font-family="system-ui">I need help with...</text>
+
+    <!-- Large bubble right -->
+    <rect x="300" y="200" width="220" height="100" rx="20" fill="url(#bubble)" stroke="#F0ABFC" stroke-width="2"/>
+    <text x="330" y="250" fill="#FCE7F3" font-size="14" font-family="system-ui">Here's what I found!</text>
+
+    <!-- Small bubble left -->
+    <rect x="100" y="240" width="150" height="60" rx="15" fill="#F0ABFC" opacity="0.3"/>
+    <text x="125" y="275" fill="#FCE7F3" font-size="14" font-family="system-ui">Thank you!</text>
+  </g>
+
+  <!-- Connection dots -->
+  <circle cx="290" cy="130" r="6" fill="#F0ABFC"/>
+  <circle cx="290" cy="250" r="6" fill="#F0ABFC"/>
+</svg>

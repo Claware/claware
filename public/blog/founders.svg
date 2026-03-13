@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" fill="none">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="600" y2="340">
+      <stop offset="0%" stop-color="#7C2D12"/>
+      <stop offset="50%" stop-color="#9A3412"/>
+      <stop offset="100%" stop-color="#C2410C"/>
+    </linearGradient>
+    <linearGradient id="rocket" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FED7AA"/>
+      <stop offset="100%" stop-color="#FB923C"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="340" fill="url(#bg5)"/>
+
+  <!-- Stars -->
+  <g fill="#FED7AA" opacity="0.6">
+    <circle cx="50" cy="50" r="2"/>
+    <circle cx="120" cy="80" r="1.5"/>
+    <circle cx="200" cy="40" r="2"/>
+    <circle cx="500" cy="60" r="2"/>
+    <circle cx="550" cy="100" r="1.5"/>
+    <circle cx="480" cy="30" r="1"/>
+    <circle cx="80" cy="120" r="1"/>
+    <circle cx="400" cy="50" r="1.5"/>
+  </g>
+
+  <!-- Rocket body -->
+  <g transform="translate(300, 170)">
+    <!-- Rocket -->
+    <ellipse cx="0" cy="-40" rx="25" ry="50" fill="#F3F4F6"/>
+    <ellipse cx="0" cy="-40" rx="20" ry="40" fill="url(#rocket)"/>
+
+    <!-- Rocket window -->
+    <circle cx="0" cy="-55" r="10" fill="#1F2937"/>
+    <circle cx="0" cy="-55" r="7" fill="#60A5FA"/>
+    <circle cx="2" cy="-57" r="3" fill="#DBEAFE" opacity="0.8"/>
+
+    <!-- Fins -->
+    <path d="M -25 0 L -35 30 L -15 15 Z" fill="#DC2626"/>
+    <path d="M 25 0 L 35 30 L 15 15 Z" fill="#DC2626"/>
+    <path d="M -10 10 L 0 35 L 10 10 Z" fill="#B91C1C"/>
+
+    <!-- Flame -->
+    <path d="M -10 35 Q 0 70 10 35 Q 0 55 -10 35" fill="#F59E0B">
+      <animate attributeName="d" values="M -10 35 Q 0 70 10 35 Q 0 55 -10 35;M -10 35 Q 0 80 10 35 Q 0 50 -10 35;M -10 35 Q 0 70 10 35 Q 0 55 -10 35" dur="0.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M -6 35 Q 0 60 6 35 Q 0 50 -6 35" fill="#EF4444" opacity="0.8"/>
+  </g>
+
+  <!-- Orbiting particles -->
+  <circle cx="200" cy="150" r="4" fill="#FED7AA" opacity="0.8"/>
+  <circle cx="400" cy="200" r="3" fill="#FB923C" opacity="0.6"/>
+  <circle cx="450" cy="120" r="2" fill="#FDBA74" opacity="0.7"/>
+  <circle cx="150" cy="220" r="3" fill="#FED7AA" opacity="0.5"/>
+
+  <!-- Growth chart silhouette -->
+  <path d="M 100 280 L 150 260 L 200 240 L 250 200 L 300 180 L 350 140 L 400 100" stroke="#FED7AA" stroke-width="3" fill="none" opacity="0.4" stroke-linecap="round"/>
+</svg>

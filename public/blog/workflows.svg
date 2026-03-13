@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" fill="none">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="600" y2="340">
+      <stop offset="0%" stop-color="#1E3A5F"/>
+      <stop offset="50%" stop-color="#2D5A87"/>
+      <stop offset="100%" stop-color="#4A90A4"/>
+    </linearGradient>
+    <linearGradient id="bridge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#DC2626"/>
+      <stop offset="100%" stop-color="#991B1B"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="340" fill="url(#bg1)"/>
+
+  <!-- Cityscape silhouette -->
+  <g fill="#0F172A" opacity="0.6">
+    <rect x="50" y="180" width="40" height="160"/>
+    <rect x="100" y="140" width="50" height="200"/>
+    <rect x="160" y="200" width="35" height="140"/>
+    <rect x="210" y="120" width="45" height="220"/>
+    <rect x="270" y="160" width="40" height="180"/>
+    <rect x="330" y="100" width="55" height="240"/>
+    <rect x="400" y="180" width="40" height="160"/>
+    <rect x="460" y="150" width="50" height="190"/>
+    <rect x="530" y="190" width="35" height="150"/>
+  </g>
+
+  <!-- Bridge structure -->
+  <path d="M 0 220 L 150 150 L 300 220" stroke="url(#bridge)" stroke-width="8" fill="none"/>
+  <path d="M 300 220 L 450 150 L 600 220" stroke="#7C2D12" stroke-width="6" fill="none"/>
+
+  <!-- Bridge supports -->
+  <line x1="150" y1="150" x2="150" y2="340" stroke="#DC2626" stroke-width="6"/>
+  <line x1="450" y1="150" x2="450" y2="340" stroke="#9A3412" stroke-width="6"/>
+
+  <!-- Text -->
+  <text x="300" y="100" fill="white" font-size="42" font-weight="700" text-anchor="middle" font-family="system-ui">Workflows</text>
+
+  <!-- Mintlify logo placeholder -->
+  <g transform="translate(270, 260)">
+    <circle cx="0" cy="0" r="12" fill="#10B981"/>
+    <text x="20" y="5" fill="white" font-size="16" font-weight="600" font-family="system-ui">mintlify</text>
+  </g>
+</svg>

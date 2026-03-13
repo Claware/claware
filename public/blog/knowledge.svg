@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" fill="none">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="600" y2="340">
+      <stop offset="0%" stop-color="#0F766E"/>
+      <stop offset="50%" stop-color="#115E59"/>
+      <stop offset="100%" stop-color="#134E4A"/>
+    </linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5EEAD4"/>
+      <stop offset="50%" stop-color="#2DD4BF"/>
+      <stop offset="100%" stop-color="#0D9488"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="600" height="200" fill="url(#sky)"/>
+
+  <!-- Ocean/ground -->
+  <rect y="200" width="600" height="140" fill="#0F766E"/>
+
+  <!-- Mountains silhouette -->
+  <path d="M 0 200 L 80 120 L 160 180 L 240 100 L 320 160 L 400 90 L 480 150 L 560 110 L 600 140 L 600 200 Z" fill="#134E4A"/>
+
+  <!-- City skyline -->
+  <g fill="#1F2937" opacity="0.8">
+    <rect x="50" y="140" width="25" height="60"/>
+    <rect x="90" y="120" width="30" height="80"/>
+    <rect x="140" y="130" width="20" height="70"/>
+    <rect x="180" y="100" width="35" height="100"/>
+    <rect x="230" y="110" width="25" height="90"/>
+    <rect x="280" y="90" width="40" height="110"/>
+    <rect x="340" y="115" width="28" height="85"/>
+    <rect x="390" y="105" width="32" height="95"/>
+    <rect x="440" y="125" width="26" height="75"/>
+    <rect x="490" y="95" width="38" height="105"/>
+    <rect x="540" y="120" width="24" height="80"/>
+  </g>
+
+  <!-- Reflection/rocks in foreground -->
+  <ellipse cx="100" cy="280" rx="60" ry="30" fill="#115E59"/>
+  <ellipse cx="500" cy="300" rx="80" ry="40" fill="#134E4A"/>
+  <ellipse cx="300" cy="320" rx="40" ry="20" fill="#0F766E"/>
+</svg>
