@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Zap, Mail, Check, Sparkles } from 'lucide-react';
+import { Zap, Mail, Check, Sparkles, ArrowRight, HardDrive, Shield, Cpu, ShoppingCart } from 'lucide-react';
 import Image from 'next/image';
 import { Claude, OpenAI, Gemini } from '@lobehub/icons';
 import { createClient } from '@/lib/supabase/client';
@@ -44,10 +44,15 @@ export default function Home() {
     }
   };
 
+  const scrollToCloudSection = () => {
+    const element = document.getElementById('cloud-section');
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-[#F8F7F5] flex flex-col relative overflow-hidden">
       {/* Subtle noise texture overlay */}
-      <div 
+      <div
         className="absolute inset-0 pointer-events-none opacity-[0.03]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
@@ -56,13 +61,13 @@ export default function Home() {
 
       {/* Ambient gradient background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-rose-200/30 via-orange-100/20 to-transparent rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-amber-100/20 via-rose-100/30 to-transparent rounded-full blur-3xl" />
+        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-gradient-to-br from-rose-200/25 via-orange-100/15 to-transparent rounded-full blur-3xl" />
+        <div className="absolute top-1/2 -left-20 w-72 h-72 bg-gradient-to-tr from-amber-100/20 via-rose-100/25 to-transparent rounded-full blur-3xl" />
       </div>
 
       {/* Header */}
-      <header className="w-full px-6 py-4 relative z-10">
-        <div className="max-w-5xl mx-auto flex items-center justify-between">
+      <header className="w-full px-6 lg:px-12 py-4 relative z-50 fixed top-0 left-0 right-0 bg-[#F8F7F5]/80 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
           <a
             href="/"
             className="flex items-center gap-2.5 group cursor-pointer"
@@ -74,12 +79,13 @@ export default function Home() {
           </a>
 
           <nav className="flex items-center gap-6">
-            <a
+            {/* Blog link hidden for now */}
+            {/* <a
               href="/blog"
-              className="hidden text-sm text-stone-600 hover:text-rose-600 transition-colors duration-200"
+              className="hidden md:block text-sm text-stone-600 hover:text-rose-600 transition-colors duration-200"
             >
               Blog
-            </a>
+            </a> */}
             <a
               href="mailto:support@claware.ai"
               className="flex items-center gap-1.5 text-sm text-stone-600 hover:text-rose-600 transition-colors duration-300"
@@ -92,23 +98,108 @@ export default function Home() {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 flex flex-col relative z-10">
-        <div className="max-w-2xl mx-auto px-6 py-6 md:py-8 w-full">
-          {/* Hero Section - Compact */}
-          <div className="text-center mb-6">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/60 backdrop-blur-sm border border-stone-200/50 shadow-sm mb-4">
-              <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-              <span className="text-xs font-medium text-stone-600">No coding required</span>
+      <main className="flex-1 flex flex-col relative z-10 pt-16">
+        {/* Hero Section: Flash Drive Deployment */}
+        <section className="min-h-[calc(100dvh-4rem)] flex items-center relative">
+          <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 py-12 lg:py-0">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              {/* Left: Content */}
+              <div className="order-2 lg:order-1">
+                {/* Badge */}
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-stone-200/60 shadow-sm mb-6">
+                  <HardDrive className="w-4 h-4 text-rose-500" />
+                  <span className="text-sm font-medium text-stone-700">Portable AI Solution</span>
+                </div>
+
+                {/* H1 */}
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-stone-900 tracking-tight leading-[1.1] mb-6">
+                  <span className="bg-gradient-to-r from-rose-500 to-orange-500 bg-clip-text text-transparent">
+                    OpenClaw
+                  </span>{' '}
+                  in your pocket
+                </h1>
+
+                {/* Description */}
+                <p className="text-lg text-stone-600 leading-relaxed max-w-xl mb-8">
+                  Take your AI assistant anywhere. A complete OpenClaw deployment that fits in your pocket — plug into any computer and start chatting instantly. No installation, no cloud dependency.
+                </p>
+
+                {/* Feature Pills */}
+                <div className="flex flex-wrap gap-3 mb-8">
+                  {[
+                    { icon: Shield, text: 'Complete data isolation' },
+                    { icon: Cpu, text: 'No complex setup' },
+                    { icon: Zap, text: 'Plug & play' },
+                  ].map((feature, i) => (
+                    <div
+                      key={i}
+                      className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 border border-stone-200/50"
+                    >
+                      <feature.icon className="w-4 h-4 text-stone-500" />
+                      <span className="text-sm font-medium text-stone-700">{feature.text}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* CTA */}
+                <button
+                  onClick={handleSignInWithGoogle}
+                  className="group cursor-pointer flex items-center justify-center gap-2.5 py-4 px-8 bg-gradient-to-r from-stone-900 via-stone-800 to-stone-900 text-white rounded-xl font-semibold text-base shadow-lg shadow-stone-900/20 transition-all duration-300 hover:shadow-xl hover:shadow-stone-900/30 hover:-translate-y-[1px] active:scale-[0.98]"
+                >
+                  <ShoppingCart className="w-5 h-5 text-amber-400" />
+                  Pre-order Now
+                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </button>
+
+                {/* Trust indicators */}
+                <p className="mt-6 text-sm text-stone-500 flex items-center gap-2">
+                  <Shield className="w-4 h-4 text-emerald-500" />
+                  Early access pricing — Ships Q2 2026
+                </p>
+              </div>
+
+              {/* Right: Visual */}
+              <div className="order-1 lg:order-2 flex items-center justify-center lg:justify-end">
+                <div className="relative w-full max-w-lg">
+                  <Image
+                    src="/flash-driver.jpg"
+                    alt="OpenClaw USB Flash Drive"
+                    width={600}
+                    height={450}
+                    className="w-full h-auto rounded-2xl shadow-2xl shadow-stone-900/10"
+                    priority
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Second Screen: Cloud Deployment (Original Content) */}
+        <section id="cloud-section" className="w-full">
+          <div className="max-w-2xl mx-auto px-6 py-6 md:py-8 w-full">
+            {/* Section Header */}
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-stone-200 to-stone-200" />
+              <span className="text-xs font-medium text-stone-500 uppercase tracking-wider">Cloud Deployment</span>
+              <div className="h-px flex-1 bg-gradient-to-l from-transparent via-stone-200 to-stone-200" />
             </div>
 
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-stone-900 tracking-tight leading-[1.15] mb-3 text-balance">
-              Deploy your OpenClaw in minutes
-            </h1>
-            
-            <p className="text-base text-stone-600 max-w-md mx-auto leading-relaxed text-balance">
-              Your own 24/7 OpenClaw on a dedicated server. No setup, no config files — just works.
-            </p>
-          </div>
+            {/* Hero Section - Compact */}
+            <div className="text-center mb-6">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/60 backdrop-blur-sm border border-stone-200/50 shadow-sm mb-4">
+                <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+                <span className="text-xs font-medium text-stone-600">No coding required</span>
+              </div>
+
+              <h2 className="text-3xl md:text-4xl lg:text-4xl font-semibold text-stone-900 tracking-tight leading-[1.15] mb-3 text-balance">
+                Deploy your OpenClaw in cloud
+              </h2>
+
+              <p className="text-base text-stone-600 max-w-md mx-auto leading-relaxed text-balance">
+                Your own 24/7 OpenClaw on a dedicated server. No setup, no config files — just works.
+              </p>
+            </div>
 
           {/* Model Selection - Compact Cards */}
           <div className="mb-5">
@@ -373,6 +464,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
       </main>
 
       {/* Footer */}
