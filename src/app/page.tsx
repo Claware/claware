@@ -27,9 +27,26 @@ export default function Home() {
   const [isHovered, setIsHovered] = useState<string | null>(null);
   const [isPressed, setIsPressed] = useState<string | null>(null);
 
-  const handleSignInWithGoogle = async () => {
+  const handleCloudDeployment = async () => {
     localStorage.setItem('selectedModel', selectedModel);
     localStorage.setItem('selectedChannel', selectedChannel);
+    localStorage.setItem('pricingType', 'cloud');
+
+    const supabase = createClient();
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: `${window.location.origin}/auth/callback`,
+      },
+    });
+
+    if (error) {
+      console.error('Error signing in with Google:', error);
+    }
+  };
+
+  const handleFlashDrivePreorder = async () => {
+    localStorage.setItem('pricingType', 'flashdrive');
 
     const supabase = createClient();
     const { error } = await supabase.auth.signInWithOAuth({
@@ -143,7 +160,7 @@ export default function Home() {
 
                 {/* CTA */}
                 <button
-                  onClick={handleSignInWithGoogle}
+                  onClick={handleFlashDrivePreorder}
                   className="group cursor-pointer flex items-center justify-center gap-2.5 py-4 px-8 bg-gradient-to-r from-stone-900 via-stone-800 to-stone-900 text-white rounded-xl font-semibold text-base shadow-lg shadow-stone-900/20 transition-all duration-300 hover:shadow-xl hover:shadow-stone-900/30 hover:-translate-y-[1px] active:scale-[0.98]"
                 >
                   <ShoppingCart className="w-5 h-5 text-amber-400" />
@@ -340,7 +357,7 @@ export default function Home() {
           {/* CTA Section */}
           <div className="space-y-3 mb-12">
             <button
-              onClick={handleSignInWithGoogle}
+              onClick={handleCloudDeployment}
               onMouseEnter={() => setIsHovered('cta')}
               onMouseLeave={() => setIsHovered(null)}
               onMouseDown={() => setIsPressed('cta')}

@@ -4,6 +4,7 @@ import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { Zap, Check, X, ExternalLink } from "lucide-react";
+import { toast, Toaster } from "sonner";
 
 function SubscribeContent() {
   const searchParams = useSearchParams();
@@ -34,6 +35,7 @@ function SubscribeContent() {
         // Load selections from localStorage
         const model = localStorage.getItem("selectedModel") || "opus";
         const channel = localStorage.getItem("selectedChannel") || "telegram";
+        const pricingType = localStorage.getItem("pricingType") || "cloud";
 
         setStatus("redirecting");
 
@@ -43,7 +45,7 @@ function SubscribeContent() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ model, channel }),
+          body: JSON.stringify({ model, channel, pricingType }),
         });
 
         if (!response.ok) {
@@ -233,6 +235,18 @@ function SubscribeContent() {
                   >
                     {isConnecting ? "Connecting..." : "Save & Connect"}
                   </button>
+
+                  <button
+                    onClick={() => {
+                      toast.success("We'll contact you via email shortly.");
+                      setTimeout(() => {
+                        window.location.href = "/";
+                      }, 2000);
+                    }}
+                    className="w-full mt-3 py-3 px-6 bg-white text-stone-600 font-medium rounded-xl border border-stone-200 transition-all duration-200 hover:bg-stone-50 hover:border-stone-300"
+                  >
+                    Skip for now
+                  </button>
                 </div>
               </div>
 
@@ -319,14 +333,17 @@ function SubscribeContent() {
 
 export default function SubscribePage() {
   return (
-    <Suspense fallback={
-      <div className="min-h-screen bg-[#FAFAFA] flex flex-col items-center justify-center p-4">
-        <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-[#E53935]/10 text-[#E53935]">
-          <Zap className="w-8 h-8 animate-pulse" />
+    <>
+      <Suspense fallback={
+        <div className="min-h-screen bg-[#FAFAFA] flex flex-col items-center justify-center p-4">
+          <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-[#E53935]/10 text-[#E53935]">
+            <Zap className="w-8 h-8 animate-pulse" />
+          </div>
         </div>
-      </div>
-    }>
-      <SubscribeContent />
-    </Suspense>
+      }>
+        <SubscribeContent />
+      </Suspense>
+      <Toaster position="top-center" richColors />
+    </>
   );
 }
