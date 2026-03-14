@@ -198,7 +198,7 @@ export default function Home() {
             {/* Section Header */}
             <div className="flex items-center justify-center gap-4 mb-8">
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-stone-200 to-stone-200" />
-              <span className="text-xs font-medium text-stone-500 uppercase tracking-wider">Cloud Deployment</span>
+              <span className="text-xs font-medium text-stone-500 uppercase tracking-wider">Cloud Version</span>
               <div className="h-px flex-1 bg-gradient-to-l from-transparent via-stone-200 to-stone-200" />
             </div>
 
