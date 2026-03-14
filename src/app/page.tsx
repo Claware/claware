@@ -125,7 +125,7 @@ export default function Home() {
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-stone-200/60 shadow-sm mb-6">
                   <HardDrive className="w-4 h-4 text-rose-500" />
-                  <span className="text-sm font-medium text-stone-700">Portable AI Solution</span>
+                  <span className="text-sm font-medium text-stone-700">Portable AI Agent</span>
                 </div>
 
                 {/* H1 */}
@@ -133,7 +133,7 @@ export default function Home() {
                   <span className="bg-gradient-to-r from-rose-500 to-orange-500 bg-clip-text text-transparent">
                     OpenClaw
                   </span>{' '}
-                  in your pocket
+                  in your Pocket
                 </h1>
 
                 {/* Description */}

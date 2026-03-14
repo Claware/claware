@@ -243,7 +243,7 @@ function SubscribeContent() {
                         window.location.href = "/";
                       }, 2000);
                     }}
-                    className="w-full mt-3 py-3 px-6 bg-white text-stone-600 font-medium rounded-xl border border-stone-200 transition-all duration-200 hover:bg-stone-50 hover:border-stone-300"
+                    className="w-full cursor-pointer mt-3 py-3 px-6 bg-white text-stone-600 font-medium rounded-xl border border-stone-200 transition-all duration-200 hover:bg-stone-50 hover:border-stone-300"
                   >
                     Skip for now
                   </button>
