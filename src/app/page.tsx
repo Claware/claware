@@ -171,7 +171,7 @@ export default function Home() {
                 {/* Trust indicators */}
                 <p className="mt-6 text-sm text-stone-500 flex items-center gap-2">
                   <Shield className="w-4 h-4 text-emerald-500" />
-                  Early access pricing — Ships Q2 2026
+                  Early access pricing — Ships in March 2026
                 </p>
               </div>
 
